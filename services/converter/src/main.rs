@@ -28,6 +28,7 @@ async fn main() {
         .route("/health", get(health))
         .route("/convert", post(convert))
         .route("/ocr", post(ocr))
+        .route("/ai", post(ai))
         .layer(CorsLayer::permissive())
         // Allow large PDFs (100 MB) through multipart uploads.
         .layer(DefaultBodyLimit::max(100 * 1024 * 1024));
@@ -50,6 +51,46 @@ async fn health() -> impl IntoResponse {
         "service": "converter",
         "version": env!("CARGO_PKG_VERSION"),
     }))
+}
+
+/// POST /ai — proxy an Anthropic Messages API request for the *web* build (the
+/// desktop app proxies through the Tauri `ai_message` command instead). Injects
+/// ANTHROPIC_API_KEY server-side so the key never reaches the browser.
+async fn ai(Json(body): Json<serde_json::Value>) -> impl IntoResponse {
+    let key = match std::env::var("ANTHROPIC_API_KEY") {
+        Ok(k) => k,
+        Err(_) => {
+            return (
+                StatusCode::INTERNAL_SERVER_ERROR,
+                Json(json!({ "error": "ANTHROPIC_API_KEY not set on the server" })),
+            )
+                .into_response();
+        }
+    };
+
+    let client = reqwest::Client::new();
+    let sent = client
+        .post("https://api.anthropic.com/v1/messages")
+        .header("x-api-key", key)
+        .header("anthropic-version", "2023-06-01")
+        .json(&body)
+        .send()
+        .await;
+
+    match sent {
+        Ok(resp) => {
+            let status = StatusCode::from_u16(resp.status().as_u16()).unwrap_or(StatusCode::OK);
+            match resp.json::<serde_json::Value>().await {
+                Ok(j) => (status, Json(j)).into_response(),
+                Err(e) => {
+                    (StatusCode::BAD_GATEWAY, Json(json!({ "error": e.to_string() }))).into_response()
+                }
+            }
+        }
+        Err(e) => {
+            (StatusCode::BAD_GATEWAY, Json(json!({ "error": e.to_string() }))).into_response()
+        }
+    }
 }
 
 /// POST /convert — body: multipart(file, target). Target ∈ docx|xlsx|pptx|txt|png|jpeg

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 import { PageCanvas } from './PageCanvas.js';
+import { OverlayLayer } from './OverlayLayer.js';
 import { EmptyState } from './EmptyState.js';
 import { useEditor } from '../store.js';
 
@@ -48,9 +49,10 @@ export function Viewer() {
               if (el) pageRefs.current.set(n, el);
               else pageRefs.current.delete(n);
             }}
-            className="rounded-sm bg-white shadow-2xl shadow-black/40 ring-1 ring-black/30"
+            className="relative rounded-sm bg-white shadow-2xl shadow-black/40 ring-1 ring-black/30"
           >
             <PageCanvas doc={doc} pageNumber={n} scale={zoom} className="block" />
+            <OverlayLayer page={n} />
           </div>
         ))}
       </div>

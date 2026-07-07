@@ -27,8 +27,10 @@ interface EditorState {
   zoom: number;
   loading: boolean;
   error: string | null;
+  assistantOpen: boolean;
 
   setMode: (mode: EditorMode) => void;
+  toggleAssistant: () => void;
   setTool: (tool: string | null) => void;
   setZoom: (zoom: number) => void;
   zoomBy: (delta: number) => void;
@@ -49,8 +51,10 @@ export const useEditor = create<EditorState>((set, get) => ({
   zoom: 1,
   loading: false,
   error: null,
+  assistantOpen: false,
 
   setMode: (mode) => set({ mode, activeTool: null }),
+  toggleAssistant: () => set((s) => ({ assistantOpen: !s.assistantOpen })),
   setTool: (activeTool) => set({ activeTool }),
   setZoom: (zoom) => set({ zoom: clampZoom(zoom) }),
   zoomBy: (delta) => set({ zoom: clampZoom(get().zoom + delta) }),

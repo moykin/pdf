@@ -1,13 +1,24 @@
 import clsx from 'clsx';
-import { Download, FolderOpen, Minus, Plus, Search } from 'lucide-react';
+import { Download, FolderOpen, Minus, Plus, Search, Sparkles } from 'lucide-react';
 
 import { MODES, modeById } from '../modes.js';
 import { pickPdf } from '../lib/openFile.js';
 import { useEditor } from '../store.js';
 
 export function Toolbar() {
-  const { mode, setMode, activeTool, setTool, zoom, zoomBy, doc, capabilities, openBytes } =
-    useEditor();
+  const {
+    mode,
+    setMode,
+    activeTool,
+    setTool,
+    zoom,
+    zoomBy,
+    doc,
+    capabilities,
+    openBytes,
+    assistantOpen,
+    toggleAssistant,
+  } = useEditor();
   const currentMode = modeById(mode);
 
   async function handleOpen() {
@@ -85,6 +96,20 @@ export function Toolbar() {
             aria-label="Search"
           >
             <Search size={16} />
+          </button>
+
+          <button
+            onClick={toggleAssistant}
+            title="AI Assistant"
+            className={clsx(
+              'inline-flex items-center gap-2 rounded-lg px-3 py-1.5 text-[13px] font-medium transition',
+              assistantOpen
+                ? 'bg-accent-soft text-text ring-1 ring-accent/40'
+                : 'text-subtle ring-1 ring-border hover:bg-surface-3 hover:text-text',
+            )}
+          >
+            <Sparkles size={15} className={assistantOpen ? 'text-accent' : ''} />
+            AI
           </button>
 
           <button
