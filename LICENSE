@@ -1,0 +1,18 @@
+Copyright (c) 2026 MyFreePDF. All rights reserved.
+
+This software and its source code are proprietary and confidential. No license,
+express or implied, is granted to use, copy, modify, merge, publish, distribute,
+sublicense, or sell copies of this software without the prior written permission
+of the copyright holder.
+
+THIRD-PARTY COMPONENTS
+This project depends on third-party software under their own licenses, including
+but not limited to PDF.js (Apache-2.0), React (MIT), Tauri (MIT/Apache-2.0) and
+the Rust crates listed in the manifests. A commercial PDF SDK (e.g. Apryse or
+Foxit), if integrated, is governed by a separate commercial license that must be
+obtained independently; do not commit its keys or redistributable binaries
+without a valid redistribution license.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.

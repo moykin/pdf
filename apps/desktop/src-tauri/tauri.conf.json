@@ -1,0 +1,60 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "MyFreePDF",
+  "version": "0.1.0",
+  "identifier": "app.myfreepdf.desktop",
+  "build": {
+    "beforeDevCommand": "pnpm dev:web",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "pnpm build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "label": "main",
+        "title": "MyFreePDF",
+        "width": 1320,
+        "height": 860,
+        "minWidth": 940,
+        "minHeight": 620,
+        "decorations": true,
+        "theme": "Dark",
+        "dragDropEnabled": false
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:; connect-src 'self' http://localhost:* https://*.myfreepdf.app"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "category": "Productivity",
+    "shortDescription": "Cross-platform PDF editor",
+    "longDescription": "MyFreePDF — view, annotate, edit, organize, fill, sign and convert PDFs on macOS, Windows and Linux.",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "macOS": {
+      "minimumSystemVersion": "10.15"
+    },
+    "windows": {
+      "nsis": {
+        "installMode": "perMachine"
+      }
+    },
+    "linux": {
+      "deb": {
+        "depends": []
+      }
+    },
+    "createUpdaterArtifacts": true
+  },
+  "plugins": {}
+}

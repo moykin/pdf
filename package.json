@@ -1,0 +1,28 @@
+{
+  "name": "myfreepdf",
+  "private": true,
+  "version": "0.1.0",
+  "description": "MyFreePDF — cross-platform PDF editor for macOS, Windows, Linux and Web (PDF Expert-class).",
+  "packageManager": "pnpm@9.12.3",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @myfreepdf/desktop dev",
+    "dev:web": "pnpm --filter @myfreepdf/desktop dev:web",
+    "build": "turbo run build",
+    "build:web": "pnpm --filter @myfreepdf/desktop build",
+    "typecheck": "turbo run typecheck",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,css,json,md}\"",
+    "tauri": "pnpm --filter @myfreepdf/desktop tauri",
+    "desktop": "pnpm --filter @myfreepdf/desktop",
+    "converter": "cargo run --manifest-path services/converter/Cargo.toml",
+    "icons": "pnpm --filter @myfreepdf/desktop tauri icon app-icon.png"
+  },
+  "devDependencies": {
+    "prettier": "^3.4.2",
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.2"
+  }
+}

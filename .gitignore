@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+dist/
+build/
+out/
+.turbo/
+
+# Rust / Tauri
+target/
+**/gen/schemas/
+
+# Tauri generated icons are committed except the raw source is kept;
+# keep generated platform icons out of history if you regenerate locally:
+# apps/desktop/src-tauri/icons/
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.keychain
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.log
+
+# Signing / release local artifacts
+*.dmg
+*.msi
+*.exe
+*.AppImage
+*.deb
+*.rpm
+release-artifacts/

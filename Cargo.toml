@@ -1,0 +1,18 @@
+# Rust workspace: the Tauri desktop shell + the backend converter service.
+# The JS/TS side is a separate pnpm workspace (see pnpm-workspace.yaml).
+[workspace]
+resolver = "2"
+members = ["apps/desktop/src-tauri", "services/converter"]
+
+[workspace.package]
+edition = "2021"
+version = "0.1.0"
+license = "LicenseRef-Proprietary"
+authors = ["MyFreePDF"]
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "abort"
+strip = true
