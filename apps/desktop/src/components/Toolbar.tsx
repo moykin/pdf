@@ -23,7 +23,7 @@ export function Toolbar() {
           <div className="grid h-7 w-7 place-items-center rounded-lg bg-accent text-[13px] font-bold text-white shadow-[0_0_0_1px_rgba(255,255,255,0.06)]">
             P
           </div>
-          <span className="text-sm font-semibold tracking-tight">MyFreePDF</span>
+          <span className="text-sm font-semibold tracking-tight">PDF.cheap</span>
         </div>
 
         <div className="mx-1 h-6 w-px bg-hairline" />

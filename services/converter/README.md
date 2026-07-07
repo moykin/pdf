@@ -23,8 +23,8 @@ the Docker image).
 cargo run -p converter                 # listens on :8787
 
 # Docker (build with repo root as context)
-docker build -f services/converter/Dockerfile -t myfreepdf-converter .
-docker run -p 8787:8787 myfreepdf-converter
+docker build -f services/converter/Dockerfile -t pdfcheap-converter .
+docker run -p 8787:8787 pdfcheap-converter
 ```
 
 The frontend reaches this via `VITE_CONVERTER_URL`.

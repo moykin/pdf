@@ -1,6 +1,6 @@
 <div align="center">
 
-# MyFreePDF
+# PDF.cheap
 
 **A cross-platform PDF editor for macOS, Windows, Linux and the Web.**
 View · Annotate · Edit text & images · Organize · Fill & Sign · Redact · Convert · OCR
@@ -15,14 +15,14 @@ Rust where it's fast, web where it's beautiful, a swappable PDF engine at the co
 ## Why this architecture
 
 A PDF editor's quality lives in its **PDF engine**, not its buttons. So the whole
-product is built around one seam — [`@myfreepdf/pdf-engine`](packages/pdf-engine) —
+product is built around one seam — [`@pdfcheap/pdf-engine`](packages/pdf-engine) —
 that the entire UI talks to and nothing bypasses. Ship the free build on the
 open-source **PDF.js** viewer today; drop in a commercial engine (**Apryse** /
 **Foxit**) the day a license lands, and text editing, redaction, forms and OCR
 light up **without touching a single component**.
 
 ```
- React 19 + Tailwind v4  ──►  @myfreepdf/pdf-engine  ──►  PDF.js  (open source, viewer)
+ React 19 + Tailwind v4  ──►  @pdfcheap/pdf-engine  ──►  PDF.js  (open source, viewer)
    (one UI, all targets)         (the swappable seam)   └►  Apryse/Foxit (commercial, full)
           │
           ├──► Web            : the browser, directly

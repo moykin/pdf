@@ -1,4 +1,4 @@
-//! MyFreePDF desktop shell.
+//! PDF.cheap desktop shell.
 //!
 //! Keep native responsibilities here — window management, filesystem access,
 //! auto-update — and let the web UI own the PDF experience. Heavy PDF work runs
@@ -26,5 +26,5 @@ pub fn run() {
         .plugin(tauri_plugin_updater::Builder::new().build())
         .invoke_handler(tauri::generate_handler![read_file_bytes, app_version])
         .run(tauri::generate_context!())
-        .expect("error while running MyFreePDF");
+        .expect("error while running PDF.cheap");
 }

@@ -13,7 +13,7 @@ Requirements: Node ≥ 20, pnpm 9, Rust stable, and the platform webview toolcha
 
 ## Golden rules
 
-1. **The UI imports only `@myfreepdf/pdf-engine`.** Never import `pdfjs-dist`,
+1. **The UI imports only `@pdfcheap/pdf-engine`.** Never import `pdfjs-dist`,
    Apryse or Foxit from a component. New PDF capability → extend the `PdfEngine`
    interface first, then implement it in each engine.
 2. **Gate features by capability.** New tools declare a `capability` in

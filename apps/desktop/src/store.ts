@@ -5,7 +5,7 @@ import {
   type EngineCapabilities,
   type PdfDocument,
   type PdfEngine,
-} from '@myfreepdf/pdf-engine';
+} from '@pdfcheap/pdf-engine';
 
 import type { EditorMode } from './modes.js';
 

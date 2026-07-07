@@ -2,5 +2,5 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 fn main() {
-    myfreepdf_lib::run()
+    pdfcheap_lib::run()
 }

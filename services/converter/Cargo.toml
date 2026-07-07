@@ -1,6 +1,6 @@
 [package]
 name = "converter"
-description = "MyFreePDF conversion + OCR microservice"
+description = "PDF.cheap conversion + OCR microservice"
 edition.workspace = true
 version.workspace = true
 license.workspace = true

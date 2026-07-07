@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import type { PdfDocument } from '@myfreepdf/pdf-engine';
+import type { PdfDocument } from '@pdfcheap/pdf-engine';
 
 interface PageCanvasProps {
   doc: PdfDocument;

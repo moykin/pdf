@@ -36,7 +36,7 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 
-import type { EngineCapabilities } from '@myfreepdf/pdf-engine';
+import type { EngineCapabilities } from '@pdfcheap/pdf-engine';
 
 export type EditorMode = 'annotate' | 'edit' | 'organize' | 'sign' | 'convert';
 

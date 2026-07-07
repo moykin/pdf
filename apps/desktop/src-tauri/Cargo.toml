@@ -1,6 +1,6 @@
 [package]
-name = "myfreepdf"
-description = "MyFreePDF — cross-platform PDF editor desktop shell"
+name = "pdfcheap"
+description = "PDF.cheap — cross-platform PDF editor desktop shell"
 edition.workspace = true
 version.workspace = true
 license.workspace = true
@@ -9,7 +9,7 @@ authors.workspace = true
 # The library exposes `run()`; the binary is a thin launcher. This split is what
 # lets the same codebase target desktop and (later) mobile.
 [lib]
-name = "myfreepdf_lib"
+name = "pdfcheap_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]

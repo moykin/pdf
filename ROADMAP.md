@@ -24,7 +24,7 @@ Everything downstream depends on it.
 
 - [x] Monorepo: pnpm + Turborepo + Rust workspace.
 - [x] Tauri 2 shell (macOS/Windows/Linux) + web target, one UI.
-- [x] Engine seam `@myfreepdf/pdf-engine` with PDF.js viewer + commercial stub.
+- [x] Engine seam `@pdfcheap/pdf-engine` with PDF.js viewer + commercial stub.
 - [x] Open (native dialog / web picker / drag-drop), render (HiDPI), thumbnails,
       zoom, page↔sidebar sync, full-text search scaffolding.
 - [x] Capability-gated toolbar for all five modes.

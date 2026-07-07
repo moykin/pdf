@@ -3,7 +3,7 @@
 ## Principle: one seam, many faces
 
 The product is a thin, beautiful UI over a **swappable PDF engine**. The UI never
-imports PDF.js, Apryse or Foxit directly — it imports `@myfreepdf/pdf-engine` and
+imports PDF.js, Apryse or Foxit directly — it imports `@pdfcheap/pdf-engine` and
 only that. This single indirection is what lets the same code run free (PDF.js
 viewer) or commercial (full editing) and web or desktop.
 

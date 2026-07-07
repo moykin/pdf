@@ -20,7 +20,7 @@ importers:
 
   apps/desktop:
     dependencies:
-      '@myfreepdf/pdf-engine':
+      '@pdfcheap/pdf-engine':
         specifier: workspace:*
         version: link:../../packages/pdf-engine
       '@tauri-apps/api':

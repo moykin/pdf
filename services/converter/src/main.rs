@@ -1,4 +1,4 @@
-//! MyFreePDF conversion + OCR microservice.
+//! PDF.cheap conversion + OCR microservice.
 //!
 //! Heavy, non-interactive PDF work that does NOT belong in the WASM client:
 //!   * Office <-> PDF conversion (Word/Excel/PPT ↔ PDF)

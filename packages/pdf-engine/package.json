@@ -1,5 +1,5 @@
 {
-  "name": "@myfreepdf/pdf-engine",
+  "name": "@pdfcheap/pdf-engine",
   "version": "0.1.0",
   "description": "Engine-agnostic PDF abstraction. Swap the open-source PDF.js implementation for a commercial SDK (Apryse/Foxit) behind one interface.",
   "type": "module",

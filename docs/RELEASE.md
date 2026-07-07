@@ -20,7 +20,7 @@ is on.
 ### 1. Auto-updater keypair (required for updates)
 
 ```bash
-pnpm tauri signer generate -w ~/.tauri/myfreepdf.key
+pnpm tauri signer generate -w ~/.tauri/pdfcheap.key
 ```
 
 - Put the **public** key in `tauri.conf.json` → `plugins.updater.pubkey`, and add
